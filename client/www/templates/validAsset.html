@@ -1,0 +1,68 @@
+<ion-view title="Valid Asset" style="background-color:#93c47d;">
+	<ion-content padding="true" class="has-header has-button">
+		<div class="list card">
+			<h4>Barcode</h4>
+			<ion-item>{{ asset.unitar_barcode }}</ion-item>
+		</div>
+		
+		<div class="list card">
+			<h4>Description</h4>
+			<ion-item style="white-space: normal">{{ asset.description }}</ion-item>
+		</div>
+		
+		<div class="list card">
+			<h4>Response</h4>
+			<ion-item>
+				Room Number: &nbsp; {{ asset.room_no || '...' }}
+			</ion-item>
+			<ion-item class="item item-button-right">
+				Item Number: &nbsp; {{ asset.item_num || '...' }}
+			</ion-item>
+			<ion-item style="white-space: normal;">
+				Serial Number: &nbsp; {{ asset.serial_num || '...' }}
+			</ion-item>
+			<ion-item class="item-button-right">
+				Price : &nbsp; {{ asset.price || '...' }}
+			</ion-item>
+			<ion-item ng-if="user.schoolId">
+				Purchase Year: {{ asset.purchase_year || '...' }}
+			</ion-item>
+			<ion-item>
+				Receipt ID: &nbsp; {{ asset.receipt_id || '...' }}
+			</ion-item>
+			<ion-item>
+				Programme: &nbsp; {{ asset.programme || '...' }}
+			</ion-item>
+			<ion-item>
+				Current User: &nbsp; {{ asset.curent_user || '...' }}
+			</ion-item>
+			<ion-item>
+				Category: &nbsp; {{ asset.category || '...' }}
+			</ion-item>
+		</div>
+		
+		<div class="list card">
+			<label class="item item-select item-input">
+				<span class="input-label">Status</span>
+				<div data-tap-disabled="true">
+					<select ng-model="asset.status" required>
+						<option value="active" >Active</option>
+						<option value="inactive" >Inactive</option>
+					</select>
+				</div>
+			</label>
+		</div>
+		
+		<div class="list card">
+			<h4>Remarks</h4>
+			<label class="item item-input item-stacked-label">
+				<textarea ng-model="asset.remarks" placeholder="Type remarks" rows="2"></textarea>
+			</label>
+		</div>
+	</ion-content>
+	
+	<div keyboard-attach class="button-bar button-fixed">
+		<button ng-click="updateAsset()" class="button button-positive button-block">Save </button>
+		<button ng-click="deleteAsset()" class="button button-positive button-block">Delete </button>
+	</div>
+</ion-view>

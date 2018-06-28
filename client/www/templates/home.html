@@ -1,0 +1,12 @@
+<ion-view title="Unitar Asset Management" hide-back-button="true">
+	<ion-content padding="true" class="has-header">
+		<div style="text-align: center">
+			<img src="img/unitar_vertical_logo_blue.jpeg" style="max-width: 300px; width: 25%; margin: 40px auto 40px;">
+		</div>
+
+		<a ui-sref="scanAsset({function: 'verify'})" class="button button-positive button-large button-block">Physical Verification</a>
+		<a ui-sref="scanAsset({function: 'relocate'})" class="button button-positive button-large button-block">Asset Relocation</a>
+		<div class="spacer" style="height: 20px;"></div>
+		<a ng-click="logout()" class="button button-positive button-large button-block">Logout</a>
+	</ion-content>
+</ion-view>

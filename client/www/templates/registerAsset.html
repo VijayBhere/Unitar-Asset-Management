@@ -1,0 +1,101 @@
+<ion-view title="Register Asset" style="background-color: #ffd966">
+	<ion-content padding="true" class="has-header has-button">
+		<form id="registerAsset" name="registerAssetForm" class="list" ng-submit="registerAssetForm.$valid && registerAsset()">
+			<div class="list card">
+				<ion-item style="white-space: normal">Barcode: {{ barcode }}</ion-item>
+			</div>
+			
+			<div class="list card">
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Description</span>
+					<textarea ng-model="asset.description" placeholder="Type description" rows="2" required></textarea>
+				</label>
+			</div>
+			
+			<div class="list card">
+				<label class="item item-input">
+					<span class="input-label">Item number</span>
+					<input type="text" ng-model="asset.item_num" placeholder="Type item number">
+				</label>
+				
+				<label class="item item-input">
+					<span class="input-label">Serial number</span>
+					<input type="text" ng-model="asset.serial_num" placeholder="Type serial number" required>
+				</label>
+				
+				<label class="item item-input">
+					<span class="input-label">Price</span>
+					<input type="text" ng-model="asset.price" placeholder="Type price">
+				</label>
+				
+				<label class="item item-input">
+					<span class="input-label">Purchase year</span>
+					<input type="text" ng-model="asset.purchase_year" placeholder="Type purchase year">
+				</label>
+				
+				<label class="item item-input">
+					<span class="input-label">Receipt Id</span>
+					<input type="text" ng-model="asset.receipt_id" placeholder="Type receipt id" required>
+				</label>
+				
+				<label class="item item-select item-input">
+					<span class="input-label">Programme</span>
+					<div data-tap-disabled="true">
+						<select ng-model="asset.programme" required>
+							<option ng-repeat="programme in programmes track by programme.id" value="{{ programme.id }}">{{ programme.name }}</option>
+						</select>
+					</div>
+				</label>
+				
+				<label class="item item-select item-input">
+					<span class="input-label">Room number</span>
+					<div data-tap-disabled="true">
+						<select ng-model="asset.room_no" required>
+							<option ng-repeat="room in rooms track by room.room_no" value="{{ room.room_no }}">{{ room.room_no }}</option>
+						</select>
+					</div>
+				</label>
+
+				<label class="item item-select item-input">
+					<span class="input-label">Current user</span>
+					<div data-tap-disabled="true">
+						<select ng-model="asset.curent_user" required>
+							<option ng-repeat="user in users track by user.user_name" value="{{ user.user_name }}">{{ user.names }}</option>
+						</select>
+					</div>
+				</label>
+				
+				<label class="item item-select item-input">
+					<span class="input-label">Status</span>
+					<div data-tap-disabled="true">
+						<select ng-model="asset.status" required>
+							<option value="active" >Active</option>
+							<option value="inactive" >Inactive</option>
+						</select>
+					</div>
+				</label>
+				
+				<label class="item item-select item-input">
+					<span class="input-label">Category</span>
+					<div data-tap-disabled="true">
+						<select ng-model="asset.category" required>
+							<option ng-repeat="category in categories track by category.id" value="{{ category.id }}">{{ category.name }}</option>
+						</select>
+					</div>
+				</label>
+			</div>
+			
+			<div class="list card">
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Remarks</span>
+					<textarea ng-model="asset.remarks" placeholder="Type remarks" rows="2"></textarea>
+				</label>
+			</div>
+		</form>
+	</ion-content>
+
+	<div keyboard-attach class="button-bar button-fixed">
+		<button form="registerAsset" class="button button-positive button-block">Save </button>
+		<button type="reset" form="registerAsset" class="button button-positive button-block">Clear</button>
+	</div>
+</ion-view>

@@ -1,0 +1,27 @@
+<ion-view title="{{ title }}">
+	<ion-content padding="true" class="has-header">
+		<div class="scan-type-selection" ng-if="showScanTypeDropdown">
+			<span>Scan type</span>
+			<button ng-click="setScanType('room')" ng-class="{'button-dark': options.scanType=='asset', 'button-positive': options.scanType=='room'}" class="button">Room</button>
+			<button ng-click="setScanType('asset')" ng-class="{'button-dark': options.scanType=='room', 'button-positive': options.scanType=='asset'}" class="button">Asset</button>
+		</div>
+		
+		<div class="scan-container" ng-click="scanBarcode()">
+			<span class="scan-button">
+				<i class="icon ion-ios-barcode-outline"></i>
+			</span>
+			<p>Tap to scan</p>
+		</div>
+		
+		<div class="or-text">OR</div>
+		
+		<div class="scan-text-container">
+			<label class="item item-input item-stacked-label centered" style="padding-right: 16px;">
+				<span class="input-label">Enter barcode manually</span>
+				<input type="text" ng-model="barcodeText" placeholder="Type barcode" required>
+			</label>
+			<a ng-click="processBarcode(barcodeText)" class="button button-positive button-block">Submit</a>
+		</div>
+		
+	</ion-content>
+</ion-view>

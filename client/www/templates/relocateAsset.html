@@ -1,0 +1,63 @@
+<ion-view title="Relocate Asset" style="background-color:#93c47d;">
+	<ion-content padding="true" class="has-header has-button">
+		<div class="list card">
+			<h4>Barcode</h4>
+			<ion-item>{{ asset.unitar_barcode }}</ion-item>
+		</div>
+		
+		<div class="list card">
+			<h4>Description</h4>
+			<ion-item style="white-space: normal">{{ asset.description }}</ion-item>
+		</div>
+		
+		<div class="list card">
+			<h4>Response</h4>
+			<ion-item>
+				Current User: &nbsp; {{ asset.curent_user_name || '...' }}
+			</ion-item>
+			<ion-item>
+				Room Number: &nbsp; {{ asset.room_no || '...' }}
+			</ion-item>
+			<ion-item>
+				Programme: &nbsp; {{ asset.programme_name || '...' }}
+			</ion-item>
+		</div>
+		
+		<form class="list" name="relocateAssetForm" id="relocateAsset" ng-submit="relocateAssetForm.$valid && relocateAsset()">
+			<div class="list card">
+				<h4>Reassign to</h4>
+				<label class="item item-select item-input">
+					<span class="input-label">Programme</span>
+					<div data-tap-disabled="true">
+						<select ng-model="tempDetails.programme" required>
+							<option ng-repeat="programme in programmes track by programme.id" value="{{ programme.id }}">{{ programme.name }}</option>
+						</select>
+					</div>
+				</label>
+				
+				<label class="item item-select item-input">
+					<span class="input-label">Room number</span>
+					<div data-tap-disabled="true">
+						<select ng-model="tempDetails.room_no" required>
+							<option ng-repeat="room in rooms track by room.room_no" value="{{ room.room_no }}">{{ room.room_no }}</option>
+						</select>
+					</div>
+				</label>
+				
+				<label class="item item-select item-input">
+					<span class="input-label">Current user</span>
+					<div data-tap-disabled="true">
+						<select ng-model="tempDetails.curent_user" required>
+							<option ng-repeat="user in users track by user.user_name" value="{{ user.user_name }}">{{ user.names }}</option>
+						</select>
+					</div>
+				</label>
+			</div>
+		</form>
+	</ion-content>
+	
+	<div keyboard-attach class="button-bar button-fixed">
+		<button form="relocateAsset" type="submit" class="button button-positive button-block">Save </button>
+		<a ui-sref="home" class="button button-positive button-block">Cancel </a>
+	</div>
+</ion-view>

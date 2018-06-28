@@ -1,0 +1,153 @@
+.platform-ios .manual-ios-statusbar-padding{
+    padding-top:20px;
+}
+.manual-remove-top-padding{
+    padding-top:0px; 
+}
+.manual-remove-top-padding .scroll{
+    padding-top:0px !important;
+}
+ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+    margin-left:-10px;
+    margin-right:-10px;
+}
+ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+    border-radius:0px;
+    border-left:0px;
+    border-right: 0px;
+}
+.show-list-numbers-and-dots ul{
+    list-style-type: disc;
+    padding-left:40px;
+}
+.show-list-numbers-and-dots ol{
+    list-style-type: decimal;
+    padding-left:40px;
+}
+
+.button-bar.button-fixed{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+
+.button-fixed .button{
+	margin: 0;
+}
+
+.has-button{
+	bottom: 47px;
+}
+
+.card:first-child{
+	margin-top: 0;
+}
+
+.card h4{
+	color: black;
+    font-weight: normal;
+    padding-left: 10px;
+}
+
+.bar-positive, .button-positive{
+    background-color: #1d67b1 !important;
+}
+
+.scan-type-selection{
+    position: relative;
+    display: block;
+    padding: 5px 11px 5px 0;
+    border: solid 1px #ddd;
+}
+
+.scan-type-selection .button{
+    width: 80px;
+    float: right;
+    margin-left: 2px;
+    line-height: 26px;
+    font-size: 14px;
+    padding: 2px 4px 1px;
+    min-width: 28px;
+    min-height: 36px;
+}
+
+.scan-type-selection span{
+    color: #444;
+    font-size: 16px;
+    padding: 8px 16px;
+    display: inline-block;
+    width: 35%;
+}
+
+.item-stacked-label.centered{
+    padding-right: 16px;
+}
+
+.item-stacked-label.centered .input-label{
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 0;
+    max-width: none;
+}
+
+.item-stacked-label.centered input{
+    text-align: center;
+}
+
+.scan-text-container{
+    border: 1px solid #ddd;
+    padding: 11px;
+}
+
+.scan-text-container .button{
+    margin-bottom: 0;
+}
+
+.scan-container{
+    text-align: center;
+    margin-top: 20%;
+}
+
+.scan-container .scan-button{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    background-color: #1d67b1;
+    display: inline-block
+}
+
+.scan-container .scan-button .icon{
+    font-size: 80px;
+    color: white;
+    line-height: 100px;
+}
+
+.scan-container .scan-button .icon:before{
+    line-height: 100px;
+}
+
+.scan-container p{
+    margin-top: 20px; font-size: 20px;
+}
+
+.or-text{
+    text-align: center;
+    font-size: 16px;
+    margin: 60px 0;
+}
+
+@media (max-width: 350px){
+	.input-label{
+		width: 55%;
+    }
+    
+    .or-text{
+        margin: 40px 0;
+    }
+
+    .scan-container{
+        margin-top: 15%;
+    }
+}

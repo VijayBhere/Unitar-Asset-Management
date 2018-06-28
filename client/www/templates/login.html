@@ -1,0 +1,21 @@
+<ion-view title="Login" hide-nav-bar="true">
+	<ion-content padding="true" class="manual-ios-statusbar-padding">
+		<div style="text-align: center">
+			<img src="img/unitar_vertical_logo_blue.jpeg" style="max-width: 300px; width: 40%; margin: 70px auto 70px;">
+		</div>
+		<p style="padding: 0 0 20px 0; text-align: center; font-size: 20px">Welcome</p>
+		<form class="list" name="loginForm" ng-submit="loginForm.$valid && signin()">
+			<label class="item item-input">
+				<span class="input-label">Username</span>
+				<input name="username" type="text" placeholder="Username" ng-model="userCredentials.user_name" required>
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Password</span>
+				<input name="password" type="password" placeholder="Password" ng-model="userCredentials.pwd" required>
+			</label>
+			<div class="spacer" style="height: 20px;"></div>
+			<button class="button button-positive button-block" type="submit">Sign In</a>
+		</form>
+	</ion-content>
+	<!-- vTodo form validations -->
+</ion-view>

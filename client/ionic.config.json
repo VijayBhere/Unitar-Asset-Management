@@ -1,0 +1,19 @@
+{
+  "name": "barcode",
+  "app_id": "",
+  "type": "ionic1",
+  "integrations": {
+    "gulp": {},
+    "cordova": {}
+  },
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ],
+  "gulp": {
+    "enabled": false
+  },
+  "dev_push": true
+}

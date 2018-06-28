@@ -1,0 +1,26 @@
+<ion-view title="Room wise asset" style="background-color:#93c47d;">
+	<ion-content padding="true" class="has-header">
+		<div class="list card">
+			<h4>Barcode</h4>
+			<ion-item>{{ room.room_no || room.unitar_barcode || '...' }}</ion-item>
+		</div>
+		
+		<div class="list card">
+			<h4>Description</h4>
+			<ion-item style="white-space: normal">{{ room.description || '...' }}</ion-item>
+		</div>
+
+		<div class="list card">
+			<h4>Response</h4>
+
+			<ion-item ng-if="assets.length == 0" style="text-align: center;">No assets found.</ion-item>
+
+			<ion-item style="white-space: normal" ng-repeat="asset in assets track by asset.unitar_barcode">
+				Serial Number: &nbsp; {{ asset.serial_num }}
+				<p style="white-space: normal">Barcode Number: &nbsp; {{ asset.unitar_barcode }}</p>
+				<p style="white-space: normal">Description: &nbsp; {{ asset.description }}</p>
+				<p style="white-space: normal">Last verification date: &nbsp; {{ getDate(asset.last_inventory_date) | date: short }}</p>
+			</ion-item>
+		</div>
+	</ion-content>
+</ion-view>

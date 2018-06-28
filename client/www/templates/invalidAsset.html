@@ -1,0 +1,23 @@
+<ion-view title="Invalid Asset" style="background-color:#ff2323;">
+	<ion-content padding="true" class="has-header has-button">
+		<div class="list card">
+			<h4>Barcode</h4>
+			<ion-item style="white-space: normal">{{ barcode }}</ion-item>
+		</div>
+		
+		<div class="list card">
+			<h4>Response</h4>
+			<ion-item style="white-space: normal">Invalid barcode, value not in database.</ion-item>
+		</div>
+		
+		<div class="list card">
+			<h4>Action</h4>
+			<ion-item style="white-space: normal">Would you like to register this product?</ion-item>
+		</div>
+	</ion-content>
+
+	<div keyboard-attach class="button-bar button-fixed">
+		<a ui-sref="registerAsset({barcode: barcode})" class="button button-positive button-block">Yes</a>
+		<a ui-sref="home()" class="button button-positive button-block">No</a>
+	</div>
+</ion-view>
