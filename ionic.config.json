@@ -1,6 +1,6 @@
 {
   "name": "barcode",
-  "app_id": "",
+  "app_id": "85d31e65",
   "type": "ionic1",
   "integrations": {
     "gulp": {},
